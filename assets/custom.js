@@ -33,6 +33,9 @@ $(document).ready(function() {
 				status: $('#status').is(":checked")
 			},
 			success: function(data) {
+				$('#AddUserModal').modal('hide');
+				$('#users').html('');
+				showusers();
 				console.log(data);
 			},
 			error: function(err) {
@@ -56,7 +59,6 @@ function showusers(limit,offset) {
 				offset: offset,
 			},
 			success: function(data) {
-				console.log(data);
 				var response = $.parseJSON(JSON.stringify(data));
 				var count = 0;
 				for (var i = response.length - 1; i >= 0; i--) {
