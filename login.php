@@ -17,6 +17,7 @@
 
 		if($res[0]['id']) {
 			$_SESSION['user'] = $res[0]['id'];
+			$_SESSION['username'] = $_POST['username'];
 			$message = array('message' => 'success');
 		} else {
 			$message = array('message' => 'please check for the username and password');	

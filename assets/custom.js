@@ -8,6 +8,7 @@ $(document).ready(function() {
 				password: $('#password').val()
 			},
 			success: function(data){
+				$('.msg-box').removeClass('d-none').slideDown();
 				var response = $.parseJSON(JSON.stringify(data));
 				$('#msg').text(response.message);
 				if(response.message == 'success'){
@@ -57,8 +58,17 @@ function showusers(limit,offset) {
 			success: function(data) {
 				console.log(data);
 				var response = $.parseJSON(JSON.stringify(data));
+				var count = 0;
 				for (var i = response.length - 1; i >= 0; i--) {
-					$('#users').append(response[i].username+'<br>');
+					count++;
+					$('#users').append(`
+						<tr>
+						  <th scope="row">${count}</th>
+						  <td>${response[i].username}</td>
+						  <td>${response[i].mobile}</td>
+						  <td>${response[i].status}</td>
+						</tr>
+						`);
 				};
 			},
 			error: function(err) {

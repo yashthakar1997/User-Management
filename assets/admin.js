@@ -12,6 +12,7 @@ $(document).ready(function() {
 				database: $('#database').val()
 			},
 			success: function(data){
+				$('.msg-box').removeClass('d-none').slideDown();
 				var response = $.parseJSON(JSON.stringify(data));
 				let res;
 				Object.keys(response).forEach(key => {
