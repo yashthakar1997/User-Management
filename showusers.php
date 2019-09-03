@@ -8,7 +8,7 @@
  	$conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "SELECT username,mobile,status FROM users where id != ". $_SESSION['user'] ." AND status=1";
+    $query = "SELECT username,mobile FROM users where id != ". $_SESSION['user'] ." AND status=1";
     $stmt = $conn->prepare($query);
     $stmt->execute();
 	$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);

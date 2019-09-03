@@ -35,8 +35,8 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Username</th>
-      <th scope="col">mobile</th>
-      <th scope="col">status</th>
+      <th scope="col">Mobile</th>
+      <th class="text-center" scope="col">Action</th>
     </tr>
   </thead>
   <tbody id="users">
@@ -87,9 +87,6 @@
 		    </div>
 		  </div>
 		</div>
-
-
-
 
 
 	<script type="text/javascript" src="assets/jquery.js"></script>
